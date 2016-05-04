@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  AlbumTracker
+
+  Created by Itallo Rossi Lucas on 4/23/16.
+  Copyright © 2016 AlbumTrackr. All rights reserved.
+*/
+last_update="Last updated on...";
+release_type_single="Single";
+release_type_album="Album";
+release_type_ep="EP";
+release_type_other="Other";
+
+artists_followed="Artists Followed";
+unfollow="Unfollow";
+newest_album="Newest album: ";
+
+account="Manage Account";
+notification="Notifications";
+help="Help";
+about="About";

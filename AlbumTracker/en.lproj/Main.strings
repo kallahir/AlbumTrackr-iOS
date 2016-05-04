@@ -1,0 +1,39 @@
+
+/* Class = "UINavigationItem"; title = "Novidades"; ObjectID = "2bQ-1B-O3w"; */
+"2bQ-1B-O3w.title" = "News Feed";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5f1-5B-o65"; */
+"5f1-5B-o65.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Ajustes"; ObjectID = "ESo-8r-Tdd"; */
+"ESo-8r-Tdd.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Ajustes"; ObjectID = "ESt-8w-obp"; */
+"ESt-8w-obp.title" = "Settings";
+
+/* Class = "UINavigationItem"; title = "Perfil"; ObjectID = "Osf-fh-VQi"; */
+"Osf-fh-VQi.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Novidades"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "News Feed";
+
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Profile";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "eGh-jK-GU9"; */
+"eGh-jK-GU9.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gvG-vd-G3p"; */
+"gvG-vd-G3p.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "jaY-ou-gUb"; */
+"jaY-ou-gUb.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "q5s-nL-LeZ"; */
+"q5s-nL-LeZ.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qS8-ap-per"; */
+"qS8-ap-per.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "tza-Nm-fIQ"; */
+"tza-Nm-fIQ.text" = "Label";
