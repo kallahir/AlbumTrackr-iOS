@@ -61,6 +61,6 @@ Feel free to help us correcting the bugs. If you correct something make a 'pull 
  - Write unit tests;
  - Write UI tests;
 
- ## Special Thanks
+## Special Thanks
 
  - [Icons8](https://icons8.com/) for providing free great icons!
