@@ -40,8 +40,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.contentOffset = CGPoint(x: self.tableHeaderHeight, y: -self.tableHeaderHeight)
         
         self.updateHeaderView()
-        
-        self.artistName.drawTextInRect(UIEdgeInsetsInsetRect(self.artistName.layer.frame,  UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)))
     }
     
     override func didReceiveMemoryWarning() {
@@ -77,4 +75,11 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         updateHeaderView()
     }
     
+}
+
+class ArtistNameLabel: UILabel {
+    override func drawTextInRect(rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
+        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, insets))
+    }
 }
