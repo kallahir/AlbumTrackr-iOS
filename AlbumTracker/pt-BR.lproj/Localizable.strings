@@ -19,3 +19,5 @@ account="Gerenciar Conta";
 notification="Notificações";
 help="Ajuda";
 about="Sobre";
+
+search_artist="Pesquisa Artista";

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		070004A11CDBA6EF00FB7788 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070004A01CDBA6EF00FB7788 /* SearchViewController.swift */; };
 		07511A961CC28926001677EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A951CC28926001677EA /* AppDelegate.swift */; };
 		07511A981CC28926001677EA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A971CC28926001677EA /* FeedViewController.swift */; };
 		07511A9A1CC28926001677EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A991CC28926001677EA /* ProfileViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		070004A01CDBA6EF00FB7788 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		07511A921CC28926001677EA /* AlbumTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07511A951CC28926001677EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07511A971CC28926001677EA /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0700049F1CDBA6DC00FB7788 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				070004A01CDBA6EF00FB7788 /* SearchViewController.swift */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
 		07511A891CC28926001677EA = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 				079E9A251CC2CF1000624449 /* Feed */,
 				079E9A261CC2CF1D00624449 /* Profile */,
 				07F8AAA91CD8528900D26E50 /* Artist */,
+				0700049F1CDBA6DC00FB7788 /* Search */,
 				079E9A271CC2CF2A00624449 /* Settings */,
 				07511A9B1CC28926001677EA /* Main.storyboard */,
 				07511A9E1CC28926001677EA /* Assets.xcassets */,
@@ -278,6 +289,7 @@
 				07FFC5BF1CD83FFC00A957E4 /* Artist.swift in Sources */,
 				0767E6211CC5B60A004B7604 /* ArtistCell.swift in Sources */,
 				07511A961CC28926001677EA /* AppDelegate.swift in Sources */,
+				070004A11CDBA6EF00FB7788 /* SearchViewController.swift in Sources */,
 				07511A981CC28926001677EA /* FeedViewController.swift in Sources */,
 				079E9A241CC2CEFE00624449 /* SettingsViewController.swift in Sources */,
 				07FFC5C11CD8400400A957E4 /* Album.swift in Sources */,

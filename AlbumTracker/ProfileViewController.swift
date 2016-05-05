@@ -99,10 +99,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let artistVC = segue.destinationViewController as! ArtistViewController
-        artistVC.albums = artists[self.selectedArtist].artistAlbums
-        artistVC.artistNameText = artists[self.selectedArtist].artistName
-        artistVC.artistImagePath = artists[self.selectedArtist].artistImage
+        if segue.identifier == "ShowArtist" {
+            let artistVC = segue.destinationViewController as! ArtistViewController
+            artistVC.albums = artists[self.selectedArtist].artistAlbums
+            artistVC.artistNameText = artists[self.selectedArtist].artistName
+            artistVC.artistImagePath = artists[self.selectedArtist].artistImage
+        }
     }
     
     func loadArtistsData(){
@@ -129,7 +131,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func searchArtist(){
-        print("SEARCH!")
+        self.performSegueWithIdentifier("SearchFromProfile", sender: self)
     }
     
 }

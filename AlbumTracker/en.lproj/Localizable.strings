@@ -19,3 +19,5 @@ account="Manage Account";
 notification="Notifications";
 help="Help";
 about="About";
+
+search_artist="Search Artist";

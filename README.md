@@ -50,7 +50,7 @@ This screen will hold all settings that will be provided to the user. They'll be
 ### Search and Artist Addition
 
 ```
-STATUS: NOT STARTED
+STATUS: ONGOING
 ```
 
 This screen will make possible for the user to look for its favorites artists and consequently adding them to its followed artists list. Once you start following an artist you will start receiving its updates and will also be able to see its discography.
