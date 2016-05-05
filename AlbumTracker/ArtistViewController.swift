@@ -16,7 +16,6 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     
     let tableHeaderHeight: CGFloat = 300.0
     var headerView: UIView!
-    
     var albums: [Album] = []
     var artistNameText:String!
     var artistImagePath:String!
@@ -41,6 +40,8 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.contentOffset = CGPoint(x: self.tableHeaderHeight, y: -self.tableHeaderHeight)
         
         self.updateHeaderView()
+        
+        self.artistName.drawTextInRect(UIEdgeInsetsInsetRect(self.artistName.layer.frame,  UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)))
     }
     
     override func didReceiveMemoryWarning() {

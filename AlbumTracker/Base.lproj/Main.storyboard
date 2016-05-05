@@ -223,9 +223,11 @@
                                                 <constraint firstItem="tza-Nm-fIQ" firstAttribute="leading" secondItem="5f1-5B-o65" secondAttribute="leading" id="kW9-A5-z8c"/>
                                                 <constraint firstItem="tza-Nm-fIQ" firstAttribute="trailing" secondItem="YPh-Cn-HNM" secondAttribute="trailingMargin" id="o6l-6n-UZe"/>
                                                 <constraint firstItem="pEL-Qs-mlc" firstAttribute="centerY" secondItem="YPh-Cn-HNM" secondAttribute="centerY" id="oLb-xh-WuW"/>
-                                                <constraint firstItem="pEL-Qs-mlc" firstAttribute="leading" secondItem="YPh-Cn-HNM" secondAttribute="leadingMargin" id="w4N-ol-EwF"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="pEL-Qs-mlc" firstAttribute="leading" secondItem="Elb-Vv-9JO" secondAttribute="leading" constant="8" id="qM2-Xf-aeT"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="artistImage" destination="pEL-Qs-mlc" id="zG8-0Z-utv"/>
                                             <outlet property="artistName" destination="tza-Nm-fIQ" id="w0t-Oa-qnT"/>
