@@ -16,8 +16,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadFeedData()
-        
         self.tableView.separatorStyle = .None
         self.tableView.showsVerticalScrollIndicator = false
         self.tableView.allowsSelection = false
@@ -30,6 +28,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(self.searchArtist))
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
+        
+        self.loadFeedData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,17 +55,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func refresh(refreshControl: UIRefreshControl){
         dispatch_async(dispatch_get_main_queue(), {
-            let numOfAdditions = self.updateFeedData()
+            let indexesPath = self.updateFeedData()
             
-            NSThread.sleepForTimeInterval(1)
+            NSThread.sleepForTimeInterval(0.5)
             
             self.tableView.beginUpdates()
-            
-            var indexesPath = [NSIndexPath]()
-            for i in 0...numOfAdditions-1 {
-                indexesPath.append(NSIndexPath(forRow: i, inSection: 0))
-            }
-            
             self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
             self.tableView.endUpdates()
             
@@ -77,14 +71,15 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         return feed.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: false)
-    }
-    
-    func updateFeedData() -> Int {
+    func updateFeedData() -> [NSIndexPath] {
+        var indexesPath = [NSIndexPath]()
+        
         self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"), atIndex: 0)
+        indexesPath.append(NSIndexPath(forRow: 0, inSection: 0))
         self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"), atIndex: 0)
-        return 2
+        indexesPath.append(NSIndexPath(forRow: 1, inSection: 0))
+        
+        return indexesPath
     }
     
     func loadFeedData(){
