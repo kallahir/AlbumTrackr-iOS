@@ -27,8 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.profileImage.layer.borderWidth = 2.0
         self.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         
-        self.navigationController?.navigationBar.topItem?.title = "Itallo Rossi"
-        self.nickname.text = "@kallahir"
+        self.nickname.text = "Itallo Rossi"
         
         self.tableView.bounces = false
         self.tableView.showsVerticalScrollIndicator = false
@@ -36,12 +35,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(self.searchArtist))
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.navigationController?.navigationBar.topItem?.title = "Itallo Rossi"
     }
 
     override func didReceiveMemoryWarning() {
