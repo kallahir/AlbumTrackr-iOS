@@ -1,6 +1,6 @@
 # AlbumTrackr-iOS
 
-AlbumTrackr is a project that has the main objective of creating an app that will provide music fans the latest updates about the artists that they like.
+AlbumTrackr is a project that has the main objective of creating the UI of a possible app that will provide music fans the latest updates about the artists that they like.
 
 This project also has an ongoing, like this one, Android version and can be found at:
 
@@ -9,9 +9,10 @@ This project also has an ongoing, like this one, Android version and can be foun
 ## Showcase
 
 <p align="center">
-<img src="showcase/newsfeed.gif" align="center"  hspace="20">
-<img src="showcase/profile.gif" align="center">
-<img src="showcase/artistdetail.gif" align="center" hspace="20">
+<img src="showcase/newsfeed.gif" align="center" hspace="5">
+<img src="showcase/profile.gif" align="center" hspace="5">
+<img src="showcase/artistdetail.gif" align="center" hspace="5">
+<img src="showcase/artistdetail.gif" align="center" hspace="5">
 </p>
 
 ## Features and General Characteristics
@@ -69,7 +70,7 @@ Currently the appliaction is being localized in the following languages:
 ## Known issues
 
  - [SOLVED] ~~In the Profile view when you unfollow an artist the cells that are not appearing in the screen,at the moment, have an weird behavior~~ [SOLUTION] The image was missing a constraint to the cell, the constraint was connected to the content view
- - In the Artist view, after you choose an artist form the Profile view, the back button is showing the name of the previous view, but should not be likes this
+ - [SOLVED] ~~In the Artist view, after you choose an artist form the Profile view, the back button is showing the name of the previous view, but should not be likes this~~ [SOLUTION] Remove the username from the navigattion controller so it would behavior normally
 
 ## Next steps
 
@@ -82,3 +83,22 @@ Currently the appliaction is being localized in the following languages:
 ## Special Thanks
 
  - [Icons8](https://icons8.com/) for providing free great icons!
+
+## License
+
+Itallo Rossi Barcelos Lucas is a Software Engineer that works with iOS, Ruby on Rails and Java.
+
+Copyright (C) 2016 Itallo Rossi Barcelos Lucas
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.

@@ -23,14 +23,14 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.allowsSelection = false
-        self.tableView.showsVerticalScrollIndicator = false
-        
         self.artistName.text = self.artistNameText
         self.artistName.backgroundColor = UIColor(red: 20/255, green: 87/255, blue: 127/255, alpha: 0.8)
         self.artistImage.image = UIImage(named: artistImagePath)
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        
+        self.tableView.allowsSelection = false
+        self.tableView.showsVerticalScrollIndicator = false
         
         self.headerView = self.tableView.tableHeaderView
         self.tableView.tableHeaderView = nil

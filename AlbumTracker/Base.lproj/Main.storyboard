@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dgL-9p-off">
-                                <rect key="frame" x="0.0" y="153" width="600" height="334"/>
+                                <rect key="frame" x="0.0" y="153" width="600" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistCell" rowHeight="66" id="Elb-Vv-9JO" customClass="ArtistCell" customModule="AlbumTracker" customModuleProvider="target">
@@ -250,7 +250,7 @@
                             <constraint firstItem="dgL-9p-off" firstAttribute="top" secondItem="sQM-z7-Nlx" secondAttribute="bottom" id="bjb-6O-FvW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sQM-z7-Nlx" secondAttribute="trailing" constant="-20" id="fAa-di-YEd"/>
                             <constraint firstItem="dgL-9p-off" firstAttribute="leading" secondItem="9gs-2l-RXh" secondAttribute="leadingMargin" constant="-20" id="geQ-mP-mQb"/>
-                            <constraint firstItem="tVi-oW-fXq" firstAttribute="top" secondItem="dgL-9p-off" secondAttribute="bottom" id="w3S-PW-A1K"/>
+                            <constraint firstItem="tVi-oW-fXq" firstAttribute="top" secondItem="dgL-9p-off" secondAttribute="bottom" constant="-49" id="w3S-PW-A1K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="Osf-fh-VQi"/>
@@ -277,7 +277,7 @@
                         <searchBar key="tableHeaderView" contentMode="redraw" id="onN-4r-JUH">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="JgR-Hc-X3y">
