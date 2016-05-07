@@ -55,13 +55,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func refresh(refreshControl: UIRefreshControl){
         dispatch_async(dispatch_get_main_queue(), {
-            self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"), atIndex: 0)
+            let numOfAdditions = self.updateFeedData()
             
             NSThread.sleepForTimeInterval(1)
             
             self.tableView.beginUpdates()
+            
             var indexesPath = [NSIndexPath]()
-            indexesPath.append(NSIndexPath(forRow: 0, inSection: 0))
+            for i in 0...numOfAdditions-1 {
+                indexesPath.append(NSIndexPath(forRow: i, inSection: 0))
+            }
+            
             self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
             self.tableView.endUpdates()
             
@@ -75,6 +79,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
+    }
+    
+    func updateFeedData() -> Int {
+        self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"), atIndex: 0)
+        self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"), atIndex: 0)
+        return 2
     }
     
     func loadFeedData(){
