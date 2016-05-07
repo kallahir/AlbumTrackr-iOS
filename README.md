@@ -9,10 +9,10 @@ This project also has an ongoing, like this one, Android version and can be foun
 ## Showcase
 
 <p align="center">
-<img src="showcase/newsfeed.gif" align="center" hspace="5">
-<img src="showcase/profile.gif" align="center" hspace="5">
-<img src="showcase/artistdetail.gif" align="center" hspace="5">
-<img src="showcase/artistdetail.gif" align="center" hspace="5">
+<img src="showcase/newsfeed.gif" align="center" hspace="5" vspace="5">
+<img src="showcase/profile.gif" align="center" hspace="5" vspace="5">
+<img src="showcase/artistdetail.gif" align="center" hspace="5" vspace="5">
+<img src="showcase/artistsearch.gif" align="center" hspace="5" vspace="5">
 </p>
 
 ## Features and General Characteristics
