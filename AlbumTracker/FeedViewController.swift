@@ -25,7 +25,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("last_update", comment: "Last Update"))
         self.tableView.addSubview(refreshControl)
         
-        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(self.searchArtist))
+        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.searchArtist))
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
         

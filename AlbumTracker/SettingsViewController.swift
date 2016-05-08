@@ -11,18 +11,12 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var settingsList = [["account","notification"],["help","about"]]
+    var settingsList = [["account"],["help","about"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.scrollEnabled = false
         
-        dispatch_async(dispatch_get_main_queue(), {
-            var frame: CGRect
-            frame = self.tableView.frame
-            frame.size.height = self.tableView.contentSize.height
-            self.tableView.frame = frame
-        })
+        self.tableView.bounces = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,18 +37,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 1{
-            return 2
+        if section == 0 {
+            return 1
         }
         return 2
     }
     
-    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return " "
-    }
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("\(indexPath.section) - \(indexPath.row) - \(self.settingsList[indexPath.section][indexPath.row])")
+        if self.settingsList[indexPath.section][indexPath.row] == "account" {
+            self.performSegueWithIdentifier("ShowAccount", sender: self)
+        }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

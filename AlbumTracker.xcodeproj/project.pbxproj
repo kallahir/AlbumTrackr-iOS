@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		070004A11CDBA6EF00FB7788 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070004A01CDBA6EF00FB7788 /* SearchViewController.swift */; };
+		0738ED531CDFC20000B492F6 /* ManageAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738ED521CDFC20000B492F6 /* ManageAccountViewController.swift */; };
+		0738ED551CDFC25300B492F6 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738ED541CDFC25300B492F6 /* NotificationCell.swift */; };
+		0738ED591CDFCE3A00B492F6 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738ED581CDFCE3A00B492F6 /* UserCell.swift */; };
+		0738ED5B1CDFDE1E00B492F6 /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0738ED5A1CDFDE1E00B492F6 /* EmailCell.swift */; };
 		07511A961CC28926001677EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A951CC28926001677EA /* AppDelegate.swift */; };
 		07511A981CC28926001677EA /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A971CC28926001677EA /* FeedViewController.swift */; };
 		07511A9A1CC28926001677EA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07511A991CC28926001677EA /* ProfileViewController.swift */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		070004A01CDBA6EF00FB7788 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		0738ED521CDFC20000B492F6 /* ManageAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAccountViewController.swift; sourceTree = "<group>"; };
+		0738ED541CDFC25300B492F6 /* NotificationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		0738ED581CDFCE3A00B492F6 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		0738ED5A1CDFDE1E00B492F6 /* EmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
 		07511A921CC28926001677EA /* AlbumTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlbumTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07511A951CC28926001677EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07511A971CC28926001677EA /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				079E9A231CC2CEFE00624449 /* SettingsViewController.swift */,
+				0738ED521CDFC20000B492F6 /* ManageAccountViewController.swift */,
+				0738ED581CDFCE3A00B492F6 /* UserCell.swift */,
+				0738ED5A1CDFDE1E00B492F6 /* EmailCell.swift */,
+				0738ED541CDFC25300B492F6 /* NotificationCell.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -285,10 +297,14 @@
 			files = (
 				07511A9A1CC28926001677EA /* ProfileViewController.swift in Sources */,
 				07FFC5BD1CD83FF500A957E4 /* Feed.swift in Sources */,
+				0738ED5B1CDFDE1E00B492F6 /* EmailCell.swift in Sources */,
 				078D23501CC4637B0025FCF6 /* FeedCell.swift in Sources */,
+				0738ED531CDFC20000B492F6 /* ManageAccountViewController.swift in Sources */,
 				07FFC5BF1CD83FFC00A957E4 /* Artist.swift in Sources */,
 				0767E6211CC5B60A004B7604 /* ArtistCell.swift in Sources */,
+				0738ED551CDFC25300B492F6 /* NotificationCell.swift in Sources */,
 				07511A961CC28926001677EA /* AppDelegate.swift in Sources */,
+				0738ED591CDFCE3A00B492F6 /* UserCell.swift in Sources */,
 				070004A11CDBA6EF00FB7788 /* SearchViewController.swift in Sources */,
 				07511A981CC28926001677EA /* FeedViewController.swift in Sources */,
 				079E9A241CC2CEFE00624449 /* SettingsViewController.swift in Sources */,

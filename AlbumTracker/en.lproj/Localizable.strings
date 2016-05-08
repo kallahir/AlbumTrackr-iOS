@@ -21,3 +21,13 @@ help="Help";
 about="About";
 
 search_artist="Search Artist";
+
+notification_ep="EP";
+notification_ep_details="Show information about new EPs.";
+notification_album="Album";
+notification_album_details="Show information about new Albums.";
+notification_single="Single";
+notification_single_details="Show information about new Singles.";
+notification_other="Other";
+notification_other_details="Other";
+notification_other_details="Show information about Other new releases.";

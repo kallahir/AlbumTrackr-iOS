@@ -32,7 +32,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.tableView.bounces = false
         self.tableView.showsVerticalScrollIndicator = false
 
-        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Search, target: self, action: #selector(self.searchArtist))
+        let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.searchArtist))
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
     }

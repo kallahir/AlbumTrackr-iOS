@@ -21,3 +21,13 @@ help="Ajuda";
 about="Sobre";
 
 search_artist="Pesquisa Artista";
+
+
+notification_ep="EP";
+notification_ep_details="Mostrar informações sobre novos EPs.";
+notification_album="Álbum";
+notification_album_details="Mostrar informações sobre novos Álbums.";
+notification_single="Single";
+notification_single_details="Mostrar informações sobre novos Singles.";
+notification_other="Outros";
+notification_other_details="Mostrar informações sobre Outros novos lançamentos.";
