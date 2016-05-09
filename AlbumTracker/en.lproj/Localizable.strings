@@ -5,22 +5,37 @@
   Created by Itallo Rossi Lucas on 4/23/16.
   Copyright © 2016 AlbumTrackr. All rights reserved.
 */
+
+/*
+ News Feed
+ */
 last_update="Last updated on...";
 release_type_single="Single";
 release_type_album="Album";
 release_type_ep="EP";
 release_type_other="Other";
 
+/*
+ Profile
+ */
 artists_followed="Artists Followed";
 unfollow="Unfollow";
-newest_album="Newest album: ";
+newest_album="Newest album:";
 
+/*
+ Artist Search and Addition
+ */
+search_artist="Search Artist";
+
+/*
+ Settings
+ */
 account="Manage Account";
-notification="Notifications";
 help="Help";
 about="About";
 
-search_artist="Search Artist";
+personal_info="Personal Information";
+notifications="Notifications";
 
 notification_ep="EP";
 notification_ep_details="Show information about new EPs.";
@@ -29,5 +44,4 @@ notification_album_details="Show information about new Albums.";
 notification_single="Single";
 notification_single_details="Show information about new Singles.";
 notification_other="Other";
-notification_other_details="Other";
 notification_other_details="Show information about Other new releases.";

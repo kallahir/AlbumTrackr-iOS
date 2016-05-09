@@ -5,23 +5,37 @@
   Created by Itallo Rossi Lucas on 4/23/16.
   Copyright © 2016 AlbumTrackr. All rights reserved.
 */
+
+/*
+ News Feed
+ */
 last_update="Última atualização em...";
 release_type_single="Single";
 release_type_album="Álbum";
 release_type_ep="EP";
 release_type_other="Outros";
 
+/*
+ Profile
+ */
 artists_followed="Artistas Seguidos";
 unfollow="Deixar de Seguir";
 newest_album="Último álbum:";
 
+/*
+ Artist Search and Addition
+ */
+search_artist="Pesquisa Artista";
+
+/*
+ Settings
+ */
 account="Gerenciar Conta";
-notification="Notificações";
 help="Ajuda";
 about="Sobre";
 
-search_artist="Pesquisa Artista";
-
+personal_info="Informações Pessoais";
+notifications="Notificações";
 
 notification_ep="EP";
 notification_ep_details="Mostrar informações sobre novos EPs.";

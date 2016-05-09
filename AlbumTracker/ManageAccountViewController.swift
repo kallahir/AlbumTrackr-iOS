@@ -32,23 +32,18 @@ class ManageAccoutnViewController: UITableViewController {
             return cell
         }
         
-        if indexPath.section == 0 && indexPath.row == 0 {
-            let cell = self.tableView.dequeueReusableCellWithIdentifier("UserCell") as! UserCell
-            
-            cell.userImage.image = UIImage(named: "profile_pic")
-            cell.userName.text = "Itallo Rossi"
-            
-            return cell
-        }
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("UserCell") as! UserCell
         
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("EmailCell") as! EmailCell
+        cell.userImage.image = UIImage(named: "profile_pic")
+        cell.userName.text = "Account not synchronized"
+        cell.userName.tintColor = UIColor.redColor()
         
         return cell
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 1
         }
         return self.notificationType.count
     }
@@ -67,9 +62,9 @@ class ManageAccoutnViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return "Manage Account"
+            return NSLocalizedString("personal_info", comment: "Personal Information")
         }
-        return "Notifications"
+        return NSLocalizedString("notifications", comment: "Notifications")
     }
 
 }

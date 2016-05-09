@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.profileImage.layer.borderWidth = 2.0
         self.profileImage.layer.borderColor = UIColor.whiteColor().CGColor
         
-        self.nickname.text = "Itallo Rossi"
+        self.nickname.text = "Itallo Rossi \(self.flag("BR"))"
         
         self.tableView.bounces = false
         self.tableView.showsVerticalScrollIndicator = false
@@ -35,6 +35,17 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.searchArtist))
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
+    }
+    
+    func flag(country:String) -> String {
+        let base:UInt32 = 127397
+        var s = ""
+        
+        for v in country.unicodeScalars{
+            s.append(UnicodeScalar(base+v.value))
+        }
+        
+        return s
     }
 
     override func didReceiveMemoryWarning() {
