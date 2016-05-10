@@ -55,8 +55,6 @@ class LoginViewController: UIViewController {
         self.signupButton.setTitle("Create Account", forState: .Normal)
         
         self.keyboardOut = false
-        
-        self.registerKeyboardNotifications()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -73,7 +71,7 @@ class LoginViewController: UIViewController {
     }
     
     func registerKeyboardNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardAppeared(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardAppeared(_:)), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDisappeared(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
@@ -87,17 +85,21 @@ class LoginViewController: UIViewController {
         let info = notification.userInfo!
         let kbSize = (info[UIKeyboardFrameBeginUserInfoKey])!.CGRectValue.size
         
-        if self.keyboardOut == false {
-            self.bottomConstraint.constant = kbSize.height
-            self.keyboardOut = true
-        }
+        UIView.animateWithDuration (0.3, animations: {
+            if self.keyboardOut == false {
+                self.bottomConstraint.constant = kbSize.height
+                self.keyboardOut = true
+            }
+        })
     }
     
     func keyboardDisappeared(notification: NSNotification){
-        if self.keyboardOut == true {
-            self.bottomConstraint.constant = 0
-            self.keyboardOut = false
-        }
+        UIView.animateWithDuration (0.3, animations: {
+            if self.keyboardOut == true {
+                self.bottomConstraint.constant = 0
+                self.keyboardOut = false
+            }
+        })
     }
     
     @IBAction func dismissKeboard(sender: AnyObject) {
