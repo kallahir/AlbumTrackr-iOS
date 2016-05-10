@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
         self.gradientLayer.frame = self.view.bounds
 
         self.emailField.tag = 0
-//        self.username.delegate = self
         self.emailField.placeholder = "Email"
         self.emailField.backgroundColor = UIColor.whiteColor()
         self.emailField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
@@ -36,7 +35,6 @@ class LoginViewController: UIViewController {
         self.emailField.leftView = leftViewEmail
         
         self.passwordField.tag = 1
-        //        self.username.delegate = self
         self.passwordField.placeholder = "Password"
         self.passwordField.backgroundColor = UIColor.whiteColor()
         self.passwordField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
@@ -52,5 +50,9 @@ class LoginViewController: UIViewController {
         
         self.signupButton.tintColor = UIColor.whiteColor()
         self.signupButton.setTitle("Create Account", forState: .Normal)
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
 }

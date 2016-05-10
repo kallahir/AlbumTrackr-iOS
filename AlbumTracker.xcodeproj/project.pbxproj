@@ -131,8 +131,8 @@
 				07511A9B1CC28926001677EA /* Main.storyboard */,
 				07511A9E1CC28926001677EA /* Assets.xcassets */,
 				07FFC5BB1CD83FE300A957E4 /* Model */,
-				07511AA31CC28926001677EA /* Info.plist */,
 				076518DD1CCB2B0300F5617D /* Localizable.strings */,
+				07511AA31CC28926001677EA /* Info.plist */,
 			);
 			path = AlbumTracker;
 			sourceTree = "<group>";

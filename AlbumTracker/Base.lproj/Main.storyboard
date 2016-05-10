@@ -632,58 +632,62 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-me-tP5">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djx-Tk-VtT">
-                                        <rect key="frame" x="20" y="280" width="560" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="43" id="nqK-o0-WX1"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-W2-VVR">
-                                        <rect key="frame" x="20" y="322" width="560" height="44"/>
+                                        <rect key="frame" x="20" y="278" width="560" height="44"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="hzt-qV-pXS"/>
+                                            <constraint firstAttribute="height" constant="44" id="Swk-Mg-nR4"/>
+                                            <constraint firstAttribute="width" secondItem="OaU-W2-VVR" secondAttribute="height" multiplier="140:11" priority="750" id="xl5-Re-Kut"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD9-tc-DGT">
-                                        <rect key="frame" x="20" y="370" width="560" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="K3D-aj-aV1"/>
-                                        </constraints>
+                                        <rect key="frame" x="20" y="328" width="560" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="49e-Tb-3d3" kind="show" id="kPV-gr-klx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-u5-pRS">
-                                        <rect key="frame" x="20" y="445" width="560" height="30"/>
+                                        <rect key="frame" x="20" y="407" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Cau-3A-qBg"/>
+                                            <constraint firstAttribute="width" secondItem="9wh-u5-pRS" secondAttribute="height" multiplier="56:3" id="Nfy-ZL-rIx"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djx-Tk-VtT">
+                                        <rect key="frame" x="20" y="234" width="560" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="leading" secondItem="KD9-tc-DGT" secondAttribute="leading" id="9kJ-ec-zoo"/>
-                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="leading" secondItem="9wh-u5-pRS" secondAttribute="leading" id="FjA-2O-mks"/>
-                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="trailing" secondItem="KD9-tc-DGT" secondAttribute="trailing" id="GmE-C6-WfV"/>
-                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="Mib-zZ-KgR"/>
-                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="top" secondItem="KD9-tc-DGT" secondAttribute="bottom" constant="31" id="RaQ-h2-j6i"/>
-                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="top" secondItem="djx-Tk-VtT" secondAttribute="bottom" constant="47" id="bI7-Kz-eUw"/>
-                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="leading" secondItem="OaU-W2-VVR" secondAttribute="leading" id="f5h-4H-RA8"/>
-                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="top" secondItem="lc8-me-tP5" secondAttribute="top" constant="280" id="fYa-9D-x0h"/>
-                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="leading" secondItem="lc8-me-tP5" secondAttribute="leading" constant="20" id="icI-q5-FnU"/>
-                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="trailing" secondItem="OaU-W2-VVR" secondAttribute="trailing" id="jYV-sx-IzW"/>
-                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="top" secondItem="OaU-W2-VVR" secondAttribute="bottom" constant="4" id="rAP-lV-sus"/>
-                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="trailing" secondItem="9wh-u5-pRS" secondAttribute="trailing" id="raG-Pl-El2"/>
+                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="top" secondItem="KD9-tc-DGT" secondAttribute="bottom" constant="35" id="5r5-pJ-HhG"/>
+                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="width" secondItem="OaU-W2-VVR" secondAttribute="width" id="87M-Xu-u5L"/>
+                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="top" secondItem="OaU-W2-VVR" secondAttribute="bottom" constant="6" id="9jr-Vr-Jqh"/>
+                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="DGv-jq-i3U"/>
+                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="Fek-Xt-dHg"/>
+                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="width" secondItem="OaU-W2-VVR" secondAttribute="width" id="H30-ms-Jp1"/>
+                                    <constraint firstAttribute="trailing" secondItem="OaU-W2-VVR" secondAttribute="trailing" constant="20" id="MKe-Ey-LDr"/>
+                                    <constraint firstItem="djx-Tk-VtT" firstAttribute="height" secondItem="OaU-W2-VVR" secondAttribute="height" id="Ppp-GI-RUw"/>
+                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="centerY" secondItem="lc8-me-tP5" secondAttribute="centerY" id="QUN-4R-0BY"/>
+                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="leading" secondItem="lc8-me-tP5" secondAttribute="leading" constant="20" id="S9d-fk-h1s"/>
+                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="height" secondItem="OaU-W2-VVR" secondAttribute="height" id="SDb-rz-30k"/>
+                                    <constraint firstItem="KD9-tc-DGT" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="Uok-KJ-hDF"/>
+                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="ebf-gs-aKK"/>
+                                    <constraint firstItem="OaU-W2-VVR" firstAttribute="top" secondItem="djx-Tk-VtT" secondAttribute="bottom" id="j5k-EJ-Uqo"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lc8-me-tP5" firstAttribute="top" secondItem="km9-9W-Hv5" secondAttribute="top" id="3pn-W9-gYT"/>
-                            <constraint firstItem="lc8-me-tP5" firstAttribute="bottom" secondItem="XXP-i0-Nv9" secondAttribute="top" id="DhD-Ma-vlB"/>
-                            <constraint firstItem="lc8-me-tP5" firstAttribute="leading" secondItem="km9-9W-Hv5" secondAttribute="leading" id="GOM-jC-Jxh"/>
-                            <constraint firstAttribute="trailing" secondItem="lc8-me-tP5" secondAttribute="trailing" id="sl4-ej-7tL"/>
+                            <constraint firstItem="lc8-me-tP5" firstAttribute="top" secondItem="Oo9-4M-mdf" secondAttribute="bottom" constant="-20" id="0OT-4U-4MJ"/>
+                            <constraint firstItem="XXP-i0-Nv9" firstAttribute="top" secondItem="lc8-me-tP5" secondAttribute="bottom" id="AdM-OG-9Jw"/>
+                            <constraint firstItem="lc8-me-tP5" firstAttribute="leading" secondItem="km9-9W-Hv5" secondAttribute="leading" id="MKb-Gb-6ah"/>
+                            <constraint firstAttribute="trailing" secondItem="lc8-me-tP5" secondAttribute="trailing" id="iDV-A5-pU5"/>
                         </constraints>
                     </view>
                     <connections>
