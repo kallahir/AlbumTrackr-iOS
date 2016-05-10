@@ -15,7 +15,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var background: UIView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
+    var keyboardOut: Bool!
+    var constrainSize: CGFloat!
     let gradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
@@ -30,7 +33,7 @@ class LoginViewController: UIViewController {
         self.emailField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
         self.emailField.layer.borderWidth = 1.0
 
-        let leftViewEmail = UIView(frame: CGRect(x: 0, y: 0, width: 41, height: 20))
+        let leftViewEmail = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: self.emailField.frame.height))
         self.emailField.leftViewMode = .Always
         self.emailField.leftView = leftViewEmail
         
@@ -40,7 +43,7 @@ class LoginViewController: UIViewController {
         self.passwordField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
         self.passwordField.layer.borderWidth = 1.0
         
-        let leftViewPassword = UIView(frame: CGRect(x: 0, y: 0, width: 41, height: 20))
+        let leftViewPassword = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: self.passwordField.frame.height))
         self.passwordField.leftViewMode = .Always
         self.passwordField.leftView = leftViewPassword
         
@@ -50,9 +53,55 @@ class LoginViewController: UIViewController {
         
         self.signupButton.tintColor = UIColor.whiteColor()
         self.signupButton.setTitle("Create Account", forState: .Normal)
+        
+        self.keyboardOut = false
+        
+        self.registerKeyboardNotifications()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.registerKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(true)
+        self.deregisterKeyboardNotifications()
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+    }
+    
+    func registerKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardAppeared(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.keyboardDisappeared(_:)), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func deregisterKeyboardNotifications () {
+        let center: NSNotificationCenter = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self, name: UIKeyboardDidHideNotification, object: nil)
+        center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardAppeared(notification: NSNotification){
+        let info = notification.userInfo!
+        let kbSize = (info[UIKeyboardFrameBeginUserInfoKey])!.CGRectValue.size
+        
+        if self.keyboardOut == false {
+            self.bottomConstraint.constant = kbSize.height
+            self.keyboardOut = true
+        }
+    }
+    
+    func keyboardDisappeared(notification: NSNotification){
+        if self.keyboardOut == true {
+            self.bottomConstraint.constant = 0
+            self.keyboardOut = false
+        }
+    }
+    
+    @IBAction func dismissKeboard(sender: AnyObject) {
+        self.emailField.resignFirstResponder()
+        self.passwordField.resignFirstResponder()
     }
 }

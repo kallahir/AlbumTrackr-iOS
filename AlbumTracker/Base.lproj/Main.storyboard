@@ -629,7 +629,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-me-tP5">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lc8-me-tP5" customClass="UIControl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OaU-W2-VVR">
@@ -680,6 +680,9 @@
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="ebf-gs-aKK"/>
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="top" secondItem="djx-Tk-VtT" secondAttribute="bottom" id="j5k-EJ-Uqo"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="dismissKeboard:" destination="IhL-vI-XnS" eventType="touchUpInside" id="y1O-dZ-nUv"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -692,6 +695,7 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="lc8-me-tP5" id="83a-YB-9Am"/>
+                        <outlet property="bottomConstraint" destination="AdM-OG-9Jw" id="qeX-yl-fkC"/>
                         <outlet property="emailField" destination="djx-Tk-VtT" id="dda-sm-ZQN"/>
                         <outlet property="loginButton" destination="KD9-tc-DGT" id="cz2-mB-Aoh"/>
                         <outlet property="passwordField" destination="OaU-W2-VVR" id="5ma-bh-x3Q"/>
