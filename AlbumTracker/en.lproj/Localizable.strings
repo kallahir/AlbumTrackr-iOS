@@ -20,7 +20,7 @@ release_type_other="Other";
  */
 artists_followed="Artists Followed";
 unfollow="Unfollow";
-newest_album="Newest album:";
+newest_album="Last album:";
 
 /*
  Artist Search and Addition

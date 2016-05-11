@@ -602,6 +602,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="editButton" destination="wec-c6-7bn" id="Svk-jr-zGJ"/>
+                                    <outlet property="synchronizeButton" destination="SOc-w1-eBh" id="a11-GZ-wpi"/>
                                     <outlet property="userImage" destination="mhB-KT-x8J" id="XWI-bN-qA7"/>
                                     <outlet property="userName" destination="Xbn-6n-mVA" id="5Lh-gT-04w"/>
                                 </connections>
@@ -643,42 +644,49 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KD9-tc-DGT">
                                         <rect key="frame" x="20" y="328" width="560" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <segue destination="49e-Tb-3d3" kind="show" id="kPV-gr-klx"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-u5-pRS">
-                                        <rect key="frame" x="20" y="407" width="560" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Cau-3A-qBg"/>
-                                            <constraint firstAttribute="width" secondItem="9wh-u5-pRS" secondAttribute="height" multiplier="56:3" id="Nfy-ZL-rIx"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="djx-Tk-VtT">
                                         <rect key="frame" x="20" y="234" width="560" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-u5-pRS">
+                                        <rect key="frame" x="20" y="407" width="273.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="hyB-rr-tTs">
+                                        <rect key="frame" x="305" y="407" width="275" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="top" secondItem="KD9-tc-DGT" secondAttribute="bottom" constant="35" id="5r5-pJ-HhG"/>
                                     <constraint firstItem="djx-Tk-VtT" firstAttribute="width" secondItem="OaU-W2-VVR" secondAttribute="width" id="87M-Xu-u5L"/>
                                     <constraint firstItem="KD9-tc-DGT" firstAttribute="top" secondItem="OaU-W2-VVR" secondAttribute="bottom" constant="6" id="9jr-Vr-Jqh"/>
-                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="DGv-jq-i3U"/>
+                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="top" secondItem="OaU-W2-VVR" secondAttribute="bottom" constant="85" id="Af5-6L-A0h"/>
                                     <constraint firstItem="djx-Tk-VtT" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="Fek-Xt-dHg"/>
                                     <constraint firstItem="KD9-tc-DGT" firstAttribute="width" secondItem="OaU-W2-VVR" secondAttribute="width" id="H30-ms-Jp1"/>
                                     <constraint firstAttribute="trailing" secondItem="OaU-W2-VVR" secondAttribute="trailing" constant="20" id="MKe-Ey-LDr"/>
+                                    <constraint firstItem="hyB-rr-tTs" firstAttribute="top" secondItem="KD9-tc-DGT" secondAttribute="bottom" constant="35" id="PdB-Z5-34L"/>
                                     <constraint firstItem="djx-Tk-VtT" firstAttribute="height" secondItem="OaU-W2-VVR" secondAttribute="height" id="Ppp-GI-RUw"/>
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="centerY" secondItem="lc8-me-tP5" secondAttribute="centerY" id="QUN-4R-0BY"/>
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="leading" secondItem="lc8-me-tP5" secondAttribute="leading" constant="20" id="S9d-fk-h1s"/>
                                     <constraint firstItem="KD9-tc-DGT" firstAttribute="height" secondItem="OaU-W2-VVR" secondAttribute="height" id="SDb-rz-30k"/>
+                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="width" secondItem="hyB-rr-tTs" secondAttribute="width" constant="-1.5" id="TDm-Fi-axJ"/>
                                     <constraint firstItem="KD9-tc-DGT" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="Uok-KJ-hDF"/>
+                                    <constraint firstItem="9wh-u5-pRS" firstAttribute="leading" secondItem="lc8-me-tP5" secondAttribute="leading" constant="20" id="dEO-gu-6uP"/>
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="centerX" secondItem="lc8-me-tP5" secondAttribute="centerX" id="ebf-gs-aKK"/>
                                     <constraint firstItem="OaU-W2-VVR" firstAttribute="top" secondItem="djx-Tk-VtT" secondAttribute="bottom" id="j5k-EJ-Uqo"/>
+                                    <constraint firstItem="hyB-rr-tTs" firstAttribute="leading" secondItem="9wh-u5-pRS" secondAttribute="trailing" constant="11.5" id="n8s-pa-PZh"/>
+                                    <constraint firstAttribute="trailing" secondItem="hyB-rr-tTs" secondAttribute="trailing" constant="20" id="ril-6p-zlW"/>
                                 </constraints>
                                 <connections>
                                     <action selector="dismissKeboard:" destination="IhL-vI-XnS" eventType="touchUpInside" id="y1O-dZ-nUv"/>
@@ -697,6 +705,7 @@
                         <outlet property="background" destination="lc8-me-tP5" id="83a-YB-9Am"/>
                         <outlet property="bottomConstraint" destination="AdM-OG-9Jw" id="qeX-yl-fkC"/>
                         <outlet property="emailField" destination="djx-Tk-VtT" id="dda-sm-ZQN"/>
+                        <outlet property="forgotPassworButton" destination="hyB-rr-tTs" id="jOL-Yf-3Zz"/>
                         <outlet property="loginButton" destination="KD9-tc-DGT" id="cz2-mB-Aoh"/>
                         <outlet property="passwordField" destination="OaU-W2-VVR" id="5ma-bh-x3Q"/>
                         <outlet property="signupButton" destination="9wh-u5-pRS" id="v0N-vR-24H"/>

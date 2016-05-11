@@ -13,11 +13,14 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var synchronizeButton: UIButton!
     
     override func layoutSubviews() {
         self.setupImage()
         self.setupImageEditAction()
         self.editButton.addTarget(self, action: #selector(self.editImage), forControlEvents: .TouchUpInside)
+        self.synchronizeButton.addTarget(self, action: #selector(self.synchronize), forControlEvents: .TouchUpInside)
+        self.synchronizeButton.setTitle("Synchronize Account", forState: .Normal)
     }
     
     func setupImage(){
@@ -36,5 +39,9 @@ class UserCell: UITableViewCell {
     
     func editImage(){
         print("EDIT IMAGE!")
+    }
+    
+    func synchronize(){
+        print("SYNC!")
     }
 }
