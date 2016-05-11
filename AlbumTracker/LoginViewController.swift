@@ -24,6 +24,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: 20/255, green: 87/255, blue: 127/255, alpha: 1.0)
         self.background.backgroundColor = UIColor(red: 20/255, green: 87/255, blue: 127/255, alpha: 1.0)
         self.gradientLayer.frame = self.view.bounds
 
@@ -84,21 +85,23 @@ class LoginViewController: UIViewController {
     func keyboardAppeared(notification: NSNotification){
         let info = notification.userInfo!
         let kbSize = (info[UIKeyboardFrameBeginUserInfoKey])!.CGRectValue.size
-        
-        UIView.animateWithDuration (0.3, animations: {
+
+        UIView.animateWithDuration (1, animations: {
             if self.keyboardOut == false {
-                self.bottomConstraint.constant = kbSize.height
+                self.bottomConstraint.constant = kbSize.height/2
                 self.keyboardOut = true
             }
+            self.view.layoutIfNeeded()
         })
     }
     
     func keyboardDisappeared(notification: NSNotification){
-        UIView.animateWithDuration (0.3, animations: {
+        UIView.animateWithDuration (1, animations: {
             if self.keyboardOut == true {
                 self.bottomConstraint.constant = 0
                 self.keyboardOut = false
             }
+            self.view.layoutIfNeeded()
         })
     }
     
