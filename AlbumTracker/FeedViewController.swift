@@ -8,10 +8,12 @@
 
 import UIKit
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet weak var loadMoreView: UIView!
     var feed: [Feed] = []
+    var isLoading: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.navigationItem.rightBarButtonItem = rightButton
         
         self.loadFeedData()
+        self.isLoading = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,21 +57,64 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func refresh(refreshControl: UIRefreshControl){
-        dispatch_async(dispatch_get_main_queue(), {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
             let indexesPath = self.updateFeedData()
             
             NSThread.sleepForTimeInterval(0.5)
             
-            self.tableView.beginUpdates()
-            self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
-            self.tableView.endUpdates()
-            
-            refreshControl.endRefreshing()
+            dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.beginUpdates()
+                self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
+                self.tableView.endUpdates()
+                
+                refreshControl.endRefreshing()
+            }
         })
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feed.count
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let maxOffset = scrollView.contentSize.height - scrollView.frame.size.height
+        if (maxOffset - offset) <= 55 {
+            self.loadMore()
+        }
+    }
+    
+    func loadMore(){
+        if !self.isLoading {
+            self.isLoading = true;
+            self.loadMoreView.hidden = false
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+                let indexesPath = self.loadMoreFeedData()
+                
+                NSThread.sleepForTimeInterval(1.5)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
+                    self.tableView.endUpdates()
+                }
+                
+                self.isLoading = false
+                self.loadMoreView.hidden = true
+            })
+        }
+    }
+    
+    func loadMoreFeedData() -> [NSIndexPath] {
+        var indexesPath = [NSIndexPath]()
+        
+        self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"))
+        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
+        self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"))
+        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
+        
+        return indexesPath
     }
     
     func updateFeedData() -> [NSIndexPath] {

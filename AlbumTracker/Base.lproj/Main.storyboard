@@ -16,6 +16,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexBackgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="MMn-jB-xZS">
+                            <rect key="frame" x="0.0" y="166" width="600" height="55"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WSB-xc-T5Q">
+                                    <rect key="frame" x="291" y="17" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="WSB-xc-T5Q" firstAttribute="centerX" secondItem="MMn-jB-xZS" secondAttribute="centerX" constant="1" id="iVd-Rf-pRD"/>
+                                <constraint firstItem="WSB-xc-T5Q" firstAttribute="centerY" secondItem="MMn-jB-xZS" secondAttribute="centerY" id="qeW-nd-y0N"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedCell" rowHeight="138" id="GRd-Uj-J2O" customClass="FeedCell" customModule="AlbumTracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="138"/>
@@ -133,6 +147,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Novidades" id="2bQ-1B-O3w"/>
                     <connections>
+                        <outlet property="loadMoreView" destination="MMn-jB-xZS" id="EqW-mH-eE7"/>
                         <outlet property="tableView" destination="Mc3-xP-Q9j" id="7QP-1h-NBn"/>
                         <segue destination="X0L-Jt-aaC" kind="show" identifier="SearchFromFeed" id="3F3-2H-e0m"/>
                     </connections>
@@ -814,6 +829,6 @@
         <image name="settings_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5kJ-iL-39F"/>
+        <segue reference="3F3-2H-e0m"/>
     </inferredMetricsTieBreakers>
 </document>
