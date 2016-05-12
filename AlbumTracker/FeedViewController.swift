@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
 
@@ -14,6 +15,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var loadMoreView: UIView!
     var feed: [Feed] = []
     var isLoading: Bool!
+    
+    var list:[[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,9 +137,35 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.feed.append(Feed(releaseArtist: "Nirvana", releaseInfo: "Nevermind", releaseImage: "nirvana", releaseDate: "24/09/1991", releaseType: "release_type_ep"))
         self.feed.append(Feed(releaseArtist: "Pink Floyd", releaseInfo: "Dark Side of the Moon", releaseImage: "pink_floyd", releaseDate: "01/03/1973", releaseType: "release_type_ep"))
         self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"))
+        
+        self.list.append(["David Bowie","Rock","Starman","david_bowie"])
+        self.list.append(["Green Day","Punk Rock","American Idiot","green_day"])
+        self.list.append(["Nirvana","Grungie","Nevermind","nirvana"])
+        self.list.append(["Rolling Stones","Rock 'n Roll","Satisfaction","rolling_stones"])
+        self.list.append(["Pink Floyd","Progressive Rock","Dark Side of The Moon","pink_floyd"])
+    }
+    
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
+    }
+    
+    func addArtist(values: [String]){
+        let dictionary: [String : AnyObject] = [
+            Artist.Keys.name : values[0],
+            Artist.Keys.lastAlbum : values[2],
+            Artist.Keys.imagePath : values[3] ?? ""
+        ]
+        let _ = Artist(dictionary: dictionary, context: sharedContext)
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    func getRandomNumberBetween (From: Int , To: Int) -> Int {
+        return From + Int(arc4random_uniform(UInt32(To - From + 1)))
     }
     
     func searchArtist(){
+        self.addArtist(self.list[0])
 //        self.performSegueWithIdentifier("SearchFromFeed", sender: self)
     }
     
