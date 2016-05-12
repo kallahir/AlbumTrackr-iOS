@@ -28,9 +28,9 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SearchCell")! as UITableViewCell
         
-        if(filteredArtists.count > 0){
-            cell.textLabel?.text = filteredArtists[indexPath.row].artistName
-        }
+//        if(filteredArtists.count > 0){
+//            cell.textLabel?.text = filteredArtists[indexPath.row].artistName
+//        }
         
         return cell
     }
@@ -45,16 +45,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredArtists = artists.filter({ artist in
-            return (artist.artistName?.lowercaseString.containsString(searchText.lowercaseString))!
+            return (artist.name?.lowercaseString.containsString(searchText.lowercaseString))!
         })
         self.tableView.reloadData()
     }
     
     func loadData(){
-        self.artists.append(Artist(artistName: "David Bowie", artistStyle: "Rock", artistNewestAlbum: "Starman", artistImage: "david_bowie"))
-        self.artists.append(Artist(artistName: "Green Day", artistStyle: "Punk Rock", artistNewestAlbum: "American Idiot", artistImage: "green_day"))
-        self.artists.append(Artist(artistName: "Nirvana", artistStyle: "Grungie", artistNewestAlbum: "Nevermind", artistImage: "nirvana"))
-        self.artists.append(Artist(artistName: "Pink Floyd", artistStyle: "Progressive Rock", artistNewestAlbum: "Dark Side of The Moon", artistImage: "pink_floyd"))
-        self.artists.append(Artist(artistName: "Rolling Stones", artistStyle: "Rock 'n Roll", artistNewestAlbum: "Satisfaction", artistImage: "rolling_stones"))
+//        self.artists.append(Artist(artistName: "David Bowie", artistStyle: "Rock", artistNewestAlbum: "Starman", artistImage: "david_bowie"))
+//        self.artists.append(Artist(artistName: "Green Day", artistStyle: "Punk Rock", artistNewestAlbum: "American Idiot", artistImage: "green_day"))
+//        self.artists.append(Artist(artistName: "Nirvana", artistStyle: "Grungie", artistNewestAlbum: "Nevermind", artistImage: "nirvana"))
+//        self.artists.append(Artist(artistName: "Pink Floyd", artistStyle: "Progressive Rock", artistNewestAlbum: "Dark Side of The Moon", artistImage: "pink_floyd"))
+//        self.artists.append(Artist(artistName: "Rolling Stones", artistStyle: "Rock 'n Roll", artistNewestAlbum: "Satisfaction", artistImage: "rolling_stones"))
     }
 }

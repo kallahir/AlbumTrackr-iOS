@@ -23,6 +23,8 @@
 		079E9A241CC2CEFE00624449 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079E9A231CC2CEFE00624449 /* SettingsViewController.swift */; };
 		07A7491B1CD44BA300A65DA7 /* AlbumTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7491A1CD44BA300A65DA7 /* AlbumTrackerUITests.swift */; };
 		07A749231CD44BC200A65DA7 /* TestPorfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A749221CD44BC200A65DA7 /* TestPorfile.swift */; };
+		07BE7C901CE41E41005C5C92 /* AlbumTrackr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07BE7C8E1CE41E41005C5C92 /* AlbumTrackr.xcdatamodeld */; };
+		07BE7C921CE42242005C5C92 /* CoreDataStackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BE7C911CE42242005C5C92 /* CoreDataStackManager.swift */; };
 		07BFF1581CE14B1500F81A74 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF1571CE14B1500F81A74 /* LoginViewController.swift */; };
 		07BFF15A1CE14B2200F81A74 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF1591CE14B2200F81A74 /* SignupViewController.swift */; };
 		07F8AAAB1CD8529E00D26E50 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F8AAAA1CD8529E00D26E50 /* ArtistViewController.swift */; };
@@ -65,6 +67,8 @@
 		07A7491A1CD44BA300A65DA7 /* AlbumTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTrackerUITests.swift; sourceTree = "<group>"; };
 		07A7491C1CD44BA300A65DA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A749221CD44BC200A65DA7 /* TestPorfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPorfile.swift; sourceTree = "<group>"; };
+		07BE7C8F1CE41E41005C5C92 /* AlbumTrackr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlbumTrackr.xcdatamodel; sourceTree = "<group>"; };
+		07BE7C911CE42242005C5C92 /* CoreDataStackManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackManager.swift; sourceTree = "<group>"; };
 		07BFF1571CE14B1500F81A74 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07BFF1591CE14B2200F81A74 /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		07F8AAAA1CD8529E00D26E50 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				07511A951CC28926001677EA /* AppDelegate.swift */,
+				07BE7C911CE42242005C5C92 /* CoreDataStackManager.swift */,
 				07BFF1551CE14AF300F81A74 /* Login */,
 				07BFF1561CE14AF800F81A74 /* Signup */,
 				079E9A251CC2CF1000624449 /* Feed */,
@@ -128,10 +133,11 @@
 				07F8AAA91CD8528900D26E50 /* Artist */,
 				0700049F1CDBA6DC00FB7788 /* Search */,
 				079E9A271CC2CF2A00624449 /* Settings */,
-				07511A9B1CC28926001677EA /* Main.storyboard */,
-				07511A9E1CC28926001677EA /* Assets.xcassets */,
 				07FFC5BB1CD83FE300A957E4 /* Model */,
+				07511A9B1CC28926001677EA /* Main.storyboard */,
 				076518DD1CCB2B0300F5617D /* Localizable.strings */,
+				07511A9E1CC28926001677EA /* Assets.xcassets */,
+				07BE7C8E1CE41E41005C5C92 /* AlbumTrackr.xcdatamodeld */,
 				07511AA31CC28926001677EA /* Info.plist */,
 			);
 			path = AlbumTracker;
@@ -327,9 +333,11 @@
 				07511A981CC28926001677EA /* FeedViewController.swift in Sources */,
 				07BFF15A1CE14B2200F81A74 /* SignupViewController.swift in Sources */,
 				079E9A241CC2CEFE00624449 /* SettingsViewController.swift in Sources */,
+				07BE7C921CE42242005C5C92 /* CoreDataStackManager.swift in Sources */,
 				07BFF1581CE14B1500F81A74 /* LoginViewController.swift in Sources */,
 				07FFC5C11CD8400400A957E4 /* Album.swift in Sources */,
 				0788417F1CD9033E002E07A0 /* AlbumCell.swift in Sources */,
+				07BE7C901CE41E41005C5C92 /* AlbumTrackr.xcdatamodeld in Sources */,
 				07F8AAAB1CD8529E00D26E50 /* ArtistViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,6 +548,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		07BE7C8E1CE41E41005C5C92 /* AlbumTrackr.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				07BE7C8F1CE41E41005C5C92 /* AlbumTrackr.xcdatamodel */,
+			);
+			currentVersion = 07BE7C8F1CE41E41005C5C92 /* AlbumTrackr.xcdatamodel */;
+			path = AlbumTrackr.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07511A8A1CC28926001677EA /* Project object */;
 }

@@ -137,7 +137,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func searchArtist(){
-        self.performSegueWithIdentifier("SearchFromFeed", sender: self)
+//        self.performSegueWithIdentifier("SearchFromFeed", sender: self)
     }
     
 }

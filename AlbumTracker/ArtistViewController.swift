@@ -17,15 +17,14 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
     let tableHeaderHeight: CGFloat = 300.0
     var headerView: UIView!
     var albums: [Album] = []
-    var artistNameText:String!
-    var artistImagePath:String!
+    var artist: Artist!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.artistName.text = self.artistNameText
+        self.artistName.text = self.artist.name
         self.artistName.backgroundColor = UIColor(red: 20/255, green: 87/255, blue: 127/255, alpha: 0.8)
-        self.artistImage.image = UIImage(named: artistImagePath)
+        self.artistImage.image = UIImage(named: self.artist.imagePath!)
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         
