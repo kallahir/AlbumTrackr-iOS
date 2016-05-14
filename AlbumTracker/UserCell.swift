@@ -20,7 +20,7 @@ class UserCell: UITableViewCell {
         self.setupImageEditAction()
         self.editButton.addTarget(self, action: #selector(self.editImage), forControlEvents: .TouchUpInside)
         self.synchronizeButton.addTarget(self, action: #selector(self.synchronize), forControlEvents: .TouchUpInside)
-        self.synchronizeButton.setTitle("Synchronize Account", forState: .Normal)
+        self.synchronizeButton.setTitle(NSLocalizedString("Settings.account_not_synced_button", comment: "Sync Button"), forState: .Normal)
     }
     
     func setupImage(){

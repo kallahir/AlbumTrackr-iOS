@@ -8,6 +8,9 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "5f1-5B-o65"; */
 "5f1-5B-o65.text" = "Label";
 
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9wh-u5-pRS"; */
+"9wh-u5-pRS.normalTitle" = "Button";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "AD5-Q9-JGt"; */
 "AD5-Q9-JGt.text" = "Label";
 
@@ -19,6 +22,12 @@
 
 /* Class = "UINavigationItem"; title = "Ajustes"; ObjectID = "ESt-8w-obp"; */
 "ESt-8w-obp.title" = "Ajustes";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KD9-tc-DGT"; */
+"KD9-tc-DGT.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "OaU-W2-VVR"; */
+"OaU-W2-VVR.placeholder" = "Senha";
 
 /* Class = "UINavigationItem"; title = "Perfil"; ObjectID = "Osf-fh-VQi"; */
 "Osf-fh-VQi.title" = "Perfil";
@@ -33,7 +42,7 @@
 "Rir-VP-QZv.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Synchronize Account"; ObjectID = "SOc-w1-eBh"; */
-"SOc-w1-eBh.normalTitle" = "Synchronize Account";
+"SOc-w1-eBh.normalTitle" = "Sincronizar Conta";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Xbn-6n-mVA"; */
 "Xbn-6n-mVA.text" = "Label";
@@ -44,11 +53,17 @@
 /* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "cPa-gy-q4n"; */
 "cPa-gy-q4n.title" = "Perfil";
 
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "djx-Tk-VtT"; */
+"djx-Tk-VtT.placeholder" = "Email";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "eGh-jK-GU9"; */
 "eGh-jK-GU9.text" = "Label";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "gvG-vd-G3p"; */
 "gvG-vd-G3p.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hyB-rr-tTs"; */
+"hyB-rr-tTs.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "jaY-ou-gUb"; */
 "jaY-ou-gUb.text" = "Label";
@@ -63,4 +78,4 @@
 "tza-Nm-fIQ.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "edit"; ObjectID = "wec-c6-7bn"; */
-"wec-c6-7bn.normalTitle" = "edit";
+"wec-c6-7bn.normalTitle" = "editar";

@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var settingsList = [["account"],["help","about"]]
+    var settingsList = [["Settings.account"],["Settings.help","Settings.about"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if self.settingsList[indexPath.section][indexPath.row] == "account" {
+        if self.settingsList[indexPath.section][indexPath.row] == "Settings.account" {
             self.performSegueWithIdentifier("ShowAccount", sender: self)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

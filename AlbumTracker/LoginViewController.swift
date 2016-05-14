@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         self.background.layer.insertSublayer(gradientLayer,atIndex: 0)
 
         self.emailField.tag = 0
-        self.emailField.placeholder = "Email"
+        self.emailField.placeholder = NSLocalizedString("Login.email", comment: "Email Field")
         self.emailField.backgroundColor = UIColor.whiteColor()
         self.emailField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
         self.emailField.layer.borderWidth = 1.0
@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
         self.emailField.leftView = leftViewEmail
         
         self.passwordField.tag = 1
-        self.passwordField.placeholder = "Password"
+        self.passwordField.placeholder = NSLocalizedString("Login.password", comment: "Password Field")
         self.passwordField.backgroundColor = UIColor.whiteColor()
         self.passwordField.layer.borderColor = UIColor(white: 0.9, alpha: 0.7).CGColor
         self.passwordField.layer.borderWidth = 1.0
@@ -56,21 +56,17 @@ class LoginViewController: UIViewController {
         
         self.loginButton.tintColor = UIColor.whiteColor()
         self.loginButton.backgroundColor = UIColor(red: 32/255, green: 140/255, blue: 204/255, alpha: 1.0)
-        self.loginButton.setTitle("Login", forState: .Normal)
+        self.loginButton.setTitle(NSLocalizedString("Login.login", comment: "Login Button"), forState: .Normal)
         self.loginButton.layer.cornerRadius = 3.0
         
         self.signupButton.tintColor = UIColor.whiteColor()
-        self.signupButton.setTitle("Create Account", forState: .Normal)
-        self.signupButton.layer.borderColor = UIColor.whiteColor().CGColor
-        self.signupButton.layer.borderWidth = 0.7
+        self.signupButton.setTitle(NSLocalizedString("Login.create_account", comment: "Create Account Button"), forState: .Normal)
         self.signupButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.signupButton.layer.borderWidth = 0.7
         self.signupButton.layer.cornerRadius = 3.0
         
         self.forgotPassworButton.tintColor = UIColor.whiteColor()
-        self.forgotPassworButton.setTitle("Forgot Password", forState: .Normal)
-        self.forgotPassworButton.layer.borderColor = UIColor.whiteColor().CGColor
-        self.forgotPassworButton.layer.borderWidth = 0.7
+        self.forgotPassworButton.setTitle(NSLocalizedString("Login.forgot_password", comment: "Forgot Password Button"), forState: .Normal)
         self.forgotPassworButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.forgotPassworButton.layer.borderWidth = 0.7
         self.forgotPassworButton.layer.cornerRadius = 3.0

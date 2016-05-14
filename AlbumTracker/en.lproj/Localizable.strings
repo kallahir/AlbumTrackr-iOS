@@ -6,42 +6,42 @@
   Copyright © 2016 AlbumTrackr. All rights reserved.
 */
 
-/*
- News Feed
- */
-last_update="Last updated on...";
+Login.email="Email";
+Login.password="Password";
+Login.login="Login";
+Login.create_account="Create Account";
+Login.forgot_password="Forgot Password";
+
+Profile.artists_followed="Artists Followed";
+Profile.unfollow="Unfollow";
+Profile.last_album="Last album:";
+
+Artist.num_of_tracks="# of tracks:";
+
+Search.search_artist="Search Artist";
+
+Settings.account="Manage Account";
+Settings.help="Help";
+Settings.about="About";
+
+Settings.personal_info="Personal Information";
+Settings.notifications="Notifications";
+
+Settings.account_not_synced="Account not Synchronized";
+Settings.account_synced="Account Synchronized";
+Settings.account_not_synced_button="Synchronize Account";
+Settings.account_synced_button="Account Synchronized";
+
+Settings.notification_ep="EP";
+Settings.notification_ep_details="Show information about new EPs.";
+Settings.notification_album="Album";
+Settings.notification_album_details="Show information about new Albums.";
+Settings.notification_single="Single";
+Settings.notification_single_details="Show information about new Singles.";
+Settings.notification_other="Other";
+Settings.notification_other_details="Show information about Other new releases.";
+
 release_type_single="Single";
 release_type_album="Album";
 release_type_ep="EP";
 release_type_other="Other";
-
-/*
- Profile
- */
-artists_followed="Artists Followed";
-unfollow="Unfollow";
-newest_album="Last album:";
-
-/*
- Artist Search and Addition
- */
-search_artist="Search Artist";
-
-/*
- Settings
- */
-account="Manage Account";
-help="Help";
-about="About";
-
-personal_info="Personal Information";
-notifications="Notifications";
-
-notification_ep="EP";
-notification_ep_details="Show information about new EPs.";
-notification_album="Album";
-notification_album_details="Show information about new Albums.";
-notification_single="Single";
-notification_single_details="Show information about new Singles.";
-notification_other="Other";
-notification_other_details="Show information about Other new releases.";

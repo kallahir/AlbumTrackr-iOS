@@ -1,12 +1,15 @@
 
 /* Class = "UINavigationItem"; title = "Novidades"; ObjectID = "2bQ-1B-O3w"; */
-"2bQ-1B-O3w.title" = "Novidades";
+"2bQ-1B-O3w.title" = "News Feed";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "5I6-0m-lh7"; */
 "5I6-0m-lh7.text" = "Label";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "5f1-5B-o65"; */
 "5f1-5B-o65.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9wh-u5-pRS"; */
+"9wh-u5-pRS.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "AD5-Q9-JGt"; */
 "AD5-Q9-JGt.text" = "Label";
@@ -15,13 +18,19 @@
 "EK2-jR-SR7.title" = " ";
 
 /* Class = "UITabBarItem"; title = "Ajustes"; ObjectID = "ESo-8r-Tdd"; */
-"ESo-8r-Tdd.title" = "Ajustes";
+"ESo-8r-Tdd.title" = "Settings";
 
 /* Class = "UINavigationItem"; title = "Ajustes"; ObjectID = "ESt-8w-obp"; */
-"ESt-8w-obp.title" = "Ajustes";
+"ESt-8w-obp.title" = "Settings";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KD9-tc-DGT"; */
+"KD9-tc-DGT.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "OaU-W2-VVR"; */
+"OaU-W2-VVR.placeholder" = "Password";
 
 /* Class = "UINavigationItem"; title = "Perfil"; ObjectID = "Osf-fh-VQi"; */
-"Osf-fh-VQi.title" = "Perfil";
+"Osf-fh-VQi.title" = "Profile";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "RL5-If-aou"; */
 "RL5-If-aou.text" = "Label";
@@ -39,16 +48,22 @@
 "Xbn-6n-mVA.text" = "Label";
 
 /* Class = "UITabBarItem"; title = "Novidades"; ObjectID = "acW-dT-cKf"; */
-"acW-dT-cKf.title" = "Novidades";
+"acW-dT-cKf.title" = "News Feed";
 
 /* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "cPa-gy-q4n"; */
-"cPa-gy-q4n.title" = "Perfil";
+"cPa-gy-q4n.title" = "Profile";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "djx-Tk-VtT"; */
+"djx-Tk-VtT.placeholder" = "Email";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "eGh-jK-GU9"; */
 "eGh-jK-GU9.text" = "Label";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "gvG-vd-G3p"; */
 "gvG-vd-G3p.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hyB-rr-tTs"; */
+"hyB-rr-tTs.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "jaY-ou-gUb"; */
 "jaY-ou-gUb.text" = "Label";

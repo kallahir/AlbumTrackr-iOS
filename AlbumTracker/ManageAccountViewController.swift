@@ -10,7 +10,7 @@ import UIKit
 
 class ManageAccoutnViewController: UITableViewController {
     
-    var notificationType = ["notification_album","notification_ep","notification_single","notification_other"]
+    var notificationType = ["Settings.notification_album","Settings.notification_ep","Settings.notification_single","Settings.notification_other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ManageAccoutnViewController: UITableViewController {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("UserCell") as! UserCell
         
         cell.userImage.image = UIImage(named: "profile_pic")
-        cell.userName.text = "Account not synchronized"
+        cell.userName.text = NSLocalizedString("Settings.account_not_synced", comment: "Account Synchronization")
         cell.userName.tintColor = UIColor.redColor()
         
         return cell
@@ -62,9 +62,9 @@ class ManageAccoutnViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0{
-            return NSLocalizedString("personal_info", comment: "Personal Information")
+            return NSLocalizedString("Settings.personal_info", comment: "Personal Information")
         }
-        return NSLocalizedString("notifications", comment: "Notifications")
+        return NSLocalizedString("Settings.notifications", comment: "Notifications")
     }
 
 }

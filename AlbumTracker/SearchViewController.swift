@@ -18,7 +18,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         
         self.searchBar.delegate = self
-        self.searchBar.placeholder = NSLocalizedString("search_artist", comment: "Search Artist")
+        self.searchBar.placeholder = NSLocalizedString("Search.search_artist", comment: "Search Artist")
         
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         

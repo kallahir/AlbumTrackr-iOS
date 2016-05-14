@@ -27,7 +27,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(FeedViewController.refresh(_:)), forControlEvents: .ValueChanged)
-        refreshControl.attributedTitle = NSAttributedString(string: NSLocalizedString("last_update", comment: "Last Update"))
         self.tableView.addSubview(refreshControl)
         
         let rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: #selector(self.searchArtist))
@@ -99,7 +98,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.beginUpdates()
-                    self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
+                    self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.None)
                     self.tableView.endUpdates()
                 }
                 
@@ -112,9 +111,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func loadMoreFeedData() -> [NSIndexPath] {
         var indexesPath = [NSIndexPath]()
         
-        self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"))
+        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
         indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
-        self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"))
+        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
+        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
+        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
         indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
         
         return indexesPath
@@ -123,9 +124,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func updateFeedData() -> [NSIndexPath] {
         var indexesPath = [NSIndexPath]()
         
-        self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1966", releaseType: "release_type_other"), atIndex: 0)
+        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
         indexesPath.append(NSIndexPath(forRow: 0, inSection: 0))
-        self.feed.insert(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction - The newest addition to your news feed!", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"), atIndex: 0)
+        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
         indexesPath.append(NSIndexPath(forRow: 1, inSection: 0))
         
         return indexesPath
@@ -165,7 +166,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func searchArtist(){
-        self.addArtist(self.list[0])
+        self.addArtist(self.list[self.getRandomNumberBetween(0, To: 4)])
 //        self.performSegueWithIdentifier("SearchFromFeed", sender: self)
     }
     

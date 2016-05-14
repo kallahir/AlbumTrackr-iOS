@@ -82,7 +82,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
         let artist = fetchedResultsController.objectAtIndexPath(indexPath) as! Artist
         cell.artistName.text = artist.name
         cell.artistImage.image = UIImage(named: artist.imagePath!)
-        cell.artistNewestAlbum.text = "\(NSLocalizedString("newest_album", comment: "Newest Album")) \(artist.lastAlbum!)"
+        cell.artistNewestAlbum.text = "\(NSLocalizedString("Profile.last_album", comment: "Last Album")) \(artist.lastAlbum!)"
         
         return cell
     }
@@ -93,7 +93,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return NSLocalizedString("artists_followed", comment: "Artitsts Followed")
+        return NSLocalizedString("Profile.artists_followed", comment: "Artitsts Followed")
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -105,7 +105,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let unfollow = UITableViewRowAction(style: .Normal, title: NSLocalizedString("unfollow", comment: "Unfollow"), handler: {(UITableViewRowAction, indexPath) in
+        let unfollow = UITableViewRowAction(style: .Normal, title: NSLocalizedString("Profile.unfollow", comment: "Unfollow"), handler: {(UITableViewRowAction, indexPath) in
             let artist = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Artist
             self.sharedContext.deleteObject(artist)
             CoreDataStackManager.sharedInstance().saveContext()

@@ -670,16 +670,19 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-u5-pRS">
-                                        <rect key="frame" x="20" y="407" width="273.5" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="hyB-rr-tTs">
                                         <rect key="frame" x="305" y="407" width="275" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wh-u5-pRS">
+                                        <rect key="frame" x="20" y="407" width="273.5" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <segue destination="R2M-Fe-vHl" kind="show" id="EU1-Tk-5A1"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -753,7 +756,7 @@
         <scene sceneID="YiR-JY-sTH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xVU-XW-roU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Ajustes" image="settings" selectedImage="settings_filled" id="ESo-8r-Tdd"/>
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="Bar.settings" selectedImage="Bar.settings_filled" id="ESo-8r-Tdd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="cug-kZ-3SQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -776,7 +779,7 @@
         <scene sceneID="fFc-OU-ISd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6UP-cb-PAe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" image="profile" selectedImage="profile_filled" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="Bar.profile" selectedImage="Bar.profile_filled" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="yCu-1b-4YD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -799,7 +802,7 @@
         <scene sceneID="NIg-bg-vTi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fQj-Ef-XvW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Novidades" image="feed" selectedImage="feed_filled" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Novidades" image="Bar.feed" selectedImage="Bar.feed_filled" id="acW-dT-cKf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="1KX-uj-zHh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -820,13 +823,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Bar.feed" width="25" height="25"/>
+        <image name="Bar.feed_filled" width="25" height="25"/>
+        <image name="Bar.profile" width="25" height="25"/>
+        <image name="Bar.profile_filled" width="25" height="25"/>
+        <image name="Bar.settings" width="25" height="25"/>
+        <image name="Bar.settings_filled" width="25" height="25"/>
         <image name="david_bowie" width="300" height="300"/>
-        <image name="feed" width="25" height="25"/>
-        <image name="feed_filled" width="25" height="25"/>
-        <image name="profile" width="25" height="25"/>
-        <image name="profile_filled" width="25" height="25"/>
-        <image name="settings" width="25" height="25"/>
-        <image name="settings_filled" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3F3-2H-e0m"/>

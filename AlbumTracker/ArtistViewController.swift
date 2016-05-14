@@ -49,7 +49,7 @@ class ArtistViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = self.tableView.dequeueReusableCellWithIdentifier("AlbumCell") as! AlbumCell
         
         cell.albumName.text = albums[indexPath.row].albumName
-        cell.albumDetails.text =  "# of Tracks: \(albums[indexPath.row].albumNumOfTracks)"
+        cell.albumDetails.text =  "\(NSLocalizedString("Artist.num_of_tracks", comment: "Number of Tracks")) \(albums[indexPath.row].albumNumOfTracks)"
         cell.albumImage.image = UIImage(named: albums[indexPath.row].albumImage!)
         
         return cell

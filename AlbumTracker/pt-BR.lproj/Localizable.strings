@@ -6,42 +6,42 @@
   Copyright © 2016 AlbumTrackr. All rights reserved.
 */
 
-/*
- News Feed
- */
-last_update="Última atualização em...";
+Login.email = "Email";
+Login.password = "Senha";
+Login.login="Entrar";
+Login.create_account="Criar Conta";
+Login.forgot_password="Esqueceu Senha";
+
+Profile.artists_followed="Artistas Seguidos";
+Profile.unfollow="Deixar de Seguir";
+Profile.last_album="Último álbum:";
+
+Artist.num_of_tracks="Número de faixas:";
+
+Search.search_artist="Pesquisa Artista";
+
+Settings.account="Gerenciar Conta";
+Settings.help="Ajuda";
+Settings.about="Sobre";
+
+Settings.personal_info="Informações Pessoais";
+Settings.notifications="Notificações";
+
+Settings.account_not_synced="Conta não sincronizada";
+Settings.account_synced="Conta sincronizada";
+Settings.account_not_synced_button="Sincronizar Conta";
+Settings.account_synced_button="Conta Sincronizada";
+
+Settings.notification_ep="EP";
+Settings.notification_ep_details="Mostrar informações sobre novos EPs.";
+Settings.notification_album="Álbum";
+Settings.notification_album_details="Mostrar informações sobre novos Álbums.";
+Settings.notification_single="Single";
+Settings.notification_single_details="Mostrar informações sobre novos Singles.";
+Settings.notification_other="Outros";
+Settings.notification_other_details="Mostrar informações sobre Outros novos lançamentos.";
+
 release_type_single="Single";
 release_type_album="Álbum";
 release_type_ep="EP";
 release_type_other="Outros";
-
-/*
- Profile
- */
-artists_followed="Artistas Seguidos";
-unfollow="Deixar de Seguir";
-newest_album="Último álbum:";
-
-/*
- Artist Search and Addition
- */
-search_artist="Pesquisa Artista";
-
-/*
- Settings
- */
-account="Gerenciar Conta";
-help="Ajuda";
-about="Sobre";
-
-personal_info="Informações Pessoais";
-notifications="Notificações";
-
-notification_ep="EP";
-notification_ep_details="Mostrar informações sobre novos EPs.";
-notification_album="Álbum";
-notification_album_details="Mostrar informações sobre novos Álbums.";
-notification_single="Single";
-notification_single_details="Mostrar informações sobre novos Singles.";
-notification_other="Outros";
-notification_other_details="Mostrar informações sobre Outros novos lançamentos.";

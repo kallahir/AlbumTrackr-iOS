@@ -42,8 +42,8 @@ class FeedCell: UITableViewCell {
     
     func setupFeedHeader(){
         self.feedHeaderView.layer.masksToBounds = false
-        self.feedHeaderView.layer.cornerRadius = 3.0
         self.feedHeaderView.layer.borderWidth = 0.5
+        self.feedHeaderView.layer.cornerRadius = 3.0
         self.feedHeaderView.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
     
