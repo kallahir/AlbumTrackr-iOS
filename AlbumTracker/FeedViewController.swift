@@ -9,13 +9,14 @@
 import UIKit
 import CoreData
 
-class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, NSFetchedResultsControllerDelegate {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet weak var loadMoreView: UIView!
     var feed: [Feed] = []
     var isLoading: Bool!
     
+    var feedList:[[String]] = []
     var list:[[String]] = []
     
     override func viewDidLoad() {
@@ -33,13 +34,29 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         rightButton.tintColor = UIColor.whiteColor()
         self.navigationItem.rightBarButtonItem = rightButton
         
+        do {
+            try self.fetchedResultsController.performFetch()
+        } catch {}
+        self.fetchedResultsController.delegate = self
         self.loadFeedData()
         self.isLoading = false
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+//    override func viewWillAppear(animated: Bool) {
+//        self.viewWillAppear(animated)
+//        self.tableView.reloadData()
+//    }
+    
+    var sharedContext: NSManagedObjectContext {
+        return CoreDataStackManager.sharedInstance().managedObjectContext
     }
+    
+    lazy var fetchedResultsController: NSFetchedResultsController = {
+        let fetchRequest = NSFetchRequest(entityName: "Release")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "releaseDate", ascending: false)]
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.sharedContext, sectionNameKeyPath: nil, cacheName: nil)
+        return fetchedResultsController
+    }()
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -48,25 +65,27 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("FeedCell") as! FeedCell
         
-        cell.feedImage.image = UIImage(named: feed[indexPath.row].releaseImage!)
-        cell.artistName.text = feed[indexPath.row].releaseArtist
-        cell.releaseInfo.text = feed[indexPath.row].releaseInfo
-        cell.releaseDate.text = feed[indexPath.row].releaseDate
-        cell.releaseTypeImage.image = UIImage(named: feed[indexPath.row].releaseType!)
-        cell.releaseType.text = NSLocalizedString(feed[indexPath.row].releaseType!, comment: "Release Type")
+        let release = fetchedResultsController.objectAtIndexPath(indexPath) as! Release
+        
+        cell.feedImage.image = UIImage(named: release.imagePath!)
+        cell.artistName.text = "ARTIST \(indexPath.row)"
+        cell.releaseInfo.text = release.name
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "DD/MM/YYYY"
+        cell.releaseDate.text = dateFormatter.stringFromDate(release.releaseDate)
+        cell.releaseTypeImage.image = UIImage(named: release.primaryType!)
+        cell.releaseType.text = NSLocalizedString(release.primaryType!, comment: "Release Type")
         
         return cell
     }
     
     func refresh(refreshControl: UIRefreshControl){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-            let indexesPath = self.updateFeedData()
-            
             NSThread.sleepForTimeInterval(0.5)
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.tableView.beginUpdates()
-                self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.Fade)
+                self.updateFeedData()
                 self.tableView.endUpdates()
                 
                 refreshControl.endRefreshing()
@@ -75,7 +94,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feed.count
+        let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
@@ -92,13 +112,11 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.loadMoreView.hidden = false
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
-                let indexesPath = self.loadMoreFeedData()
-                
                 NSThread.sleepForTimeInterval(1.5)
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.tableView.beginUpdates()
-                    self.tableView.insertRowsAtIndexPaths(indexesPath, withRowAnimation: UITableViewRowAnimation.None)
+                    self.loadMoreFeedData()
                     self.tableView.endUpdates()
                 }
                 
@@ -108,36 +126,61 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func loadMoreFeedData() -> [NSIndexPath] {
-        var indexesPath = [NSIndexPath]()
-        
-        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
-        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
-        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
-        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
-        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
-        indexesPath.append(NSIndexPath(forRow: self.feed.count-1, inSection: 0))
-        
-        return indexesPath
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.beginUpdates()
     }
     
-    func updateFeedData() -> [NSIndexPath] {
-        var indexesPath = [NSIndexPath]()
+    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
         
-        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
-        indexesPath.append(NSIndexPath(forRow: 0, inSection: 0))
-        self.feed.insert(self.feed[self.getRandomNumberBetween(0, To: self.feed.count-1)], atIndex: 0)
-        indexesPath.append(NSIndexPath(forRow: 1, inSection: 0))
-        
-        return indexesPath
+        switch type {
+        case .Insert:
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        case .Delete:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+        case .Update:
+            let cell = tableView.cellForRowAtIndexPath(indexPath!) as! FeedCell
+            
+            let release = fetchedResultsController.objectAtIndexPath(indexPath!) as! Release
+            
+            cell.feedImage.image = UIImage(named: release.imagePath!)
+            cell.artistName.text = "ARTIST \(indexPath!.row)"
+            cell.releaseInfo.text = release.name
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM/YYYY"
+            cell.releaseDate.text = dateFormatter.stringFromDate(release.releaseDate)
+            cell.releaseTypeImage.image = UIImage(named: release.primaryType!)
+            cell.releaseType.text = NSLocalizedString(release.primaryType!, comment: "Release Type")
+        case .Move:
+            self.tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
+            self.tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
+        }
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        self.tableView.endUpdates()
+    }
+    
+    func loadMoreFeedData() {
+        self.addRelease(self.feedList[self.getRandomNumberBetween(0, To: self.feedList.count-1)])
+        self.addRelease(self.feedList[self.getRandomNumberBetween(0, To: self.feedList.count-1)])
+        self.addRelease(self.feedList[self.getRandomNumberBetween(0, To: self.feedList.count-1)])
+    }
+    
+    func updateFeedData() {
+        self.addRelease(self.feedList[self.getRandomNumberBetween(0, To: self.feedList.count-1)])
+        self.addRelease(self.feedList[self.getRandomNumberBetween(0, To: self.feedList.count-1)])
     }
     
     func loadFeedData(){
-        self.feed.append(Feed(releaseArtist: "David Bowie", releaseInfo: "Starman", releaseImage: "david_bowie", releaseDate: "09/02/1972", releaseType: "release_type_single"))
-        self.feed.append(Feed(releaseArtist: "Green Day", releaseInfo: "American Idiot", releaseImage: "green_day", releaseDate: "20/09/2004", releaseType: "release_type_album"))
-        self.feed.append(Feed(releaseArtist: "Nirvana", releaseInfo: "Nevermind", releaseImage: "nirvana", releaseDate: "24/09/1991", releaseType: "release_type_ep"))
-        self.feed.append(Feed(releaseArtist: "Pink Floyd", releaseInfo: "Dark Side of the Moon", releaseImage: "pink_floyd", releaseDate: "01/03/1973", releaseType: "release_type_ep"))
-        self.feed.append(Feed(releaseArtist: "Rolling Stones", releaseInfo: "Satisfaction", releaseImage: "rolling_stones", releaseDate: "1965", releaseType: "release_type_other"))
+        self.feedList.append(["David Bowie","Starman","david_bowie","09/02/1972","release_type_single"])
+        self.feedList.append(["Green Day","American Idiot","green_day","20/09/2004","release_type_album"])
+        self.feedList.append(["Nirvana","Nevermind","nirvana","20/09/2004","release_type_ep"])
+        self.feedList.append(["Rolling Stones","Satisfaction","rolling_stones","20/09/2004","release_type_ep"])
+        self.feedList.append(["Pink Floyd","Dark Side of the Moon","pink_floyd","20/09/2004","release_type_other"])
+        
+        for feed in feedList {
+            self.addRelease(feed)
+        }
         
         self.list.append(["David Bowie","Rock","Starman","david_bowie"])
         self.list.append(["Green Day","Punk Rock","American Idiot","green_day"])
@@ -146,8 +189,32 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.list.append(["Pink Floyd","Progressive Rock","Dark Side of The Moon","pink_floyd"])
     }
     
-    var sharedContext: NSManagedObjectContext {
-        return CoreDataStackManager.sharedInstance().managedObjectContext
+    func addRelease(values: [String]){
+        let dictionary: [String : AnyObject] = [
+            Release.Keys.name : values[1],
+            Release.Keys.isAlbum : self.isAlbum(values[4]),
+            Release.Keys.imagePath : values[2],
+            Release.Keys.releaseGroupGid : "XYZ",
+            Release.Keys.releaseGroupId : 123,
+            Release.Keys.primaryType : values[4],
+            Release.Keys.secondaryType : "SEC_TYPE",
+            Release.Keys.releaseDate : NSDate(timeIntervalSince1970: self.randomTimeInterval())
+        ]
+        let _ = Release(dictionary: dictionary, context: sharedContext)
+        
+        CoreDataStackManager.sharedInstance().saveContext()
+    }
+    
+    func isAlbum(release_type: String) -> Bool {
+        if release_type == "release_type_album" {
+            return true
+        }
+        
+        return false
+    }
+    
+    func randomTimeInterval() -> Double {
+        return Double(arc4random())
     }
     
     func addArtist(values: [String]){
@@ -171,4 +238,3 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
 }
-

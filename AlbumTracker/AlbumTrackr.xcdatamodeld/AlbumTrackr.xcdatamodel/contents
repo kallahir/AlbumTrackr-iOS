@@ -7,7 +7,18 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="style" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Release" representedClassName=".Release" syncable="YES">
+        <attribute name="imagePath" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAlbum" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="primaryType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="releaseDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="releaseGroupGid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="releaseGroupId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="secondaryType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Artist" positionX="-450" positionY="-153" width="128" height="120"/>
+        <element name="Release" positionX="-450" positionY="-117" width="128" height="165"/>
     </elements>
 </model>
