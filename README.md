@@ -1,4 +1,4 @@
-# AlbumTrackr-iOS
+# AlbumTrackr-iOS <PROJECT CANCELLED>
 
 AlbumTrackr is a project that has the main objective of creating the UI of a possible app that will provide music fans the latest updates about the artists that they like.
 
